@@ -39,3 +39,9 @@ variable "private_db_subnet_az2_cidr" {
   type        = string
 }
 
+# security group variables
+variable "my_ip" {
+  default     = "0.0.0.0/0"
+  description = "The ip address that can ssh to ec2"
+  type        = string
+}
