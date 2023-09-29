@@ -39,9 +39,28 @@ variable "private_db_subnet_az2_cidr" {
   type        = string
 }
 
-# security group variables
+## security group variables ##
 variable "my_ip" {
   default     = "0.0.0.0/0"
   description = "The ip address that can ssh to ec2"
   type        = string
+}
+
+## RDS variables ##
+variable "database_instance" {
+  default     = "db.t2.micro"
+  description = "the database instance type"
+  type        = string
+}
+
+variable "db_username" {
+  description = "Database administrator username"
+  type        = string
+  sensitive   = true
+}
+
+variable "db_password" {
+  description = "Database administrator password"
+  type        = string
+  sensitive   = true
 }
