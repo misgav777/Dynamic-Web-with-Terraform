@@ -72,3 +72,9 @@ variable "ssl_certificate" {
   default = "arn:aws:acm:us-east-1:757158648679:certificate/68054c78-3623-45f9-814c-f4f884894984"
   type    = string
 }
+
+# sns variables
+variable "operator_email" {
+  default = "misgav777@gmail.com"
+  type    = string
+}
