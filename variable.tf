@@ -1,3 +1,4 @@
+## VPC variables ##
 variable "vpc_cidr" {
   default     = "10.0.0.0/16"
   description = "vpc cidr block"
@@ -39,6 +40,8 @@ variable "private_db_subnet_az2_cidr" {
   type        = string
 }
 
+
+
 ## security group variables ##
 variable "my_ip" {
   default     = "0.0.0.0/0"
@@ -46,11 +49,23 @@ variable "my_ip" {
   type        = string
 }
 
+
+
 ## RDS variables ##
 variable "database_instance" {
-  default     = "db.t2.micro"
+  default     = "db.t3.micro"
   description = "the database instance type"
   type        = string
+}
+
+variable "rds_snapshot" {
+  default = "arn:aws:rds:us-east-1:757158648679:snapshot:dev-rds-snapshot"
+  type    = string
+}
+
+variable "rds_identifier" {
+  default = "dev-rds-instance"
+  type    = string
 }
 
 # variable "db_username" {
@@ -67,14 +82,38 @@ variable "database_instance" {
 variable "db_username" {}
 variable "db_password" {}
 
-# application load balancer variables
+
+
+## application load balancer variables ##
 variable "ssl_certificate" {
   default = "arn:aws:acm:us-east-1:757158648679:certificate/68054c78-3623-45f9-814c-f4f884894984"
   type    = string
 }
 
-# sns variables
+
+
+## sns variables ##
 variable "operator_email" {
   default = "misgav777@gmail.com"
+  type    = string
+}
+
+
+
+## asg variables ##
+variable "launch_template_name" {
+  default = "dev-launch-template"
+  type    = string
+}
+variable "ec2_image_id" {
+  default = "ami-082d65ce36cbc2ea2"
+  type    = string
+}
+variable "ec2_instance_type" {
+  default = "t2.micro"
+  type    = string
+}
+variable "key_name" {
+  default = "iitc"
   type    = string
 }

@@ -31,7 +31,7 @@ resource "aws_lb_target_group" "alb_target_group" {
   health_check {
     healthy_threshold   = 5
     interval            = 30
-    matcher             = "200, 301, 302"
+    matcher             = "200,301,302"
     path                = "/"
     port                = "traffic-port"
     protocol            = "HTTP"
@@ -63,7 +63,7 @@ resource "aws_lb_listener" "alb_http_listener" {
 resource "aws_lb_listener" "alb_https_listener" {
   load_balancer_arn = aws_lb.application_load_balancer.arn
   port              = 443
-  protocol          = "HTTPs"
+  protocol          = "HTTPS"
   ssl_policy        = "ELBSecurityPolicy-2016-08"
   certificate_arn   = var.ssl_certificate
 
