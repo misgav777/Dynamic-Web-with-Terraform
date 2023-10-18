@@ -106,7 +106,7 @@ variable "launch_template_name" {
   type    = string
 }
 variable "ec2_image_id" {
-  default = "ami-082d65ce36cbc2ea2"
+  default = "ami-06dde9c24d222d741"
   type    = string
 }
 variable "ec2_instance_type" {
@@ -115,5 +115,15 @@ variable "ec2_instance_type" {
 }
 variable "key_name" {
   default = "iitc"
+  type    = string
+}
+
+## route53 variables ##
+variable "domain_name" {
+  default = "misgavn.com"
+  type    = string
+}
+variable "record_name" {
+  default = "www"
   type    = string
 }

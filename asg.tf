@@ -16,7 +16,7 @@ resource "aws_launch_template" "webserver_launch_template" {
 # create auto scaling group
 resource "aws_autoscaling_group" "auto_scaling_group" {
   vpc_zone_identifier = [aws_subnet.private_app_subnet_az1.id, aws_subnet.private_app_subnet_az2.id]
-  desired_capacity    = 2
+  desired_capacity    = 1
   max_size            = 4
   min_size            = 1
   name                = "dev-asg"
@@ -29,7 +29,7 @@ resource "aws_autoscaling_group" "auto_scaling_group" {
 
   tag {
     key                 = "Name"
-    value               = "asg-webserver"
+    value               = "webserver"
     propagate_at_launch = true
   }
 
