@@ -1,3 +1,17 @@
+## Environment variables ##
+variable "region" {
+  description = "region"
+  type        = string
+}
+variable "project_name" {
+  description = "project name"
+  type        = string
+}
+variable "environment" {
+  description = "environment"
+  type        = string
+}
+
 ## VPC variables ##
 variable "vpc_cidr" {
   default     = "10.0.0.0/16"
