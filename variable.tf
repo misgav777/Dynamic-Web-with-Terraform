@@ -92,10 +92,10 @@ variable "db_password" {}
 
 
 ## application load balancer variables ##
-variable "ssl_certificate" {
-  default = "arn:aws:acm:us-east-1:757158648679:certificate/68054c78-3623-45f9-814c-f4f884894984"
-  type    = string
-}
+# variable "ssl_certificate" {
+#   default = "arn:aws:acm:us-east-1:757158648679:certificate/68054c78-3623-45f9-814c-f4f884894984"
+#   type    = string
+# }
 
 
 
@@ -127,10 +127,10 @@ variable "key_name" {
 
 ## route53 variables ##
 variable "domain_name" {
-  default = "misgavn.com"
-  type    = string
+  description = "domain name"
+  type        = string
 }
-variable "record_name" {
-  default = "www"
-  type    = string
+variable "alternative_name" {
+  description = "sub domain name"
+  type        = string
 }
