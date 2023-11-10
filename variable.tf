@@ -125,11 +125,16 @@ variable "key_name" {
   type    = string
 }
 
-## route53 variables ##
+## route53 and acm variables ##
 variable "domain_name" {
   description = "domain name"
   type        = string
 }
+variable "record_name" {
+  description = "record name"
+  type        = string
+}
+
 variable "alternative_name" {
   description = "sub domain name"
   type        = string

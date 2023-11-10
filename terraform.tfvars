@@ -15,3 +15,4 @@ private_db_subnet_az2_cidr  = "10.0.5.0/24"
 ## route53 variables ##
 domain_name      = "misgavn.com"
 alternative_name = "*.misgavn.com"
+record_name      = "www"
